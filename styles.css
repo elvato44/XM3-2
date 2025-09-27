@@ -1,0 +1,342 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+font-family: "Jugabet", sans-serif;
+background: url('img/bg-mob.4128d181.webp') no-repeat center center fixed;
+background-size: cover; /* Hace que el fondo cubra toda la pantalla*/
+background-attachment: fixed; /* Fija el fondo para que no se mueva al hacer scroll */
+background-position: center center; /* Centra la imagen */
+background-repeat: no-repeat; /* Evita repeticiones de la imagen */
+color: white;
+margin: 0;
+padding: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté por encima de la imagen */
+  padding: 20px;
+}
+
+
+.background-image {
+  position: fixed; /* Fija la imagen en el fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/tu-imagen.jpg');
+  background-size: cover; /* La imagen cubre todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* No repite la imagen */
+  z-index: -1; /* Pone la imagen en el fondo, detrás del contenido */
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Fondo desplazable en dispositivos móviles */
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 5rem 0 2rem 0;
+    visibility: hidden;
+}
+
+.logo img {
+    width: 20rem;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Main Title */
+.main-title {
+    font-family: 'Jugabet', sans-serif; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*masivo edit*/
+}
+
+.main-title {
+    text-align: center;
+    margin-top: 145px; /* Ajusta este valor para crear espacio debajo del logo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main-title p:first-child {
+    color: #fff;
+}
+
+.main-title p:nth-child(2) {
+    color: #ddd;
+    font-size: 23px;
+}
+
+.main-title p:last-child {
+    color: #ffd700;
+    font-size: 42px;
+    text-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700;
+}
+
+/* WhatsApp Button Section */
+.whatsapp {
+    margin: 3rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  padding: 0.8em 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Jugabet", sans-serif;
+  font-size: 30px;
+  background: linear-gradient(113.27deg, #5428b4 15.04%, #b339e2 84.96%);
+  border-radius: 10px;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.8),   /* resplandor externo dorado */
+    inset 0 0 10px rgba(255, 215, 0, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: pulse 1.2s infinite;
+  border: 2px solid #ffd700; 
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-20deg);
+  animation: shine 2.5s infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(199, 9, 9, 1),
+              0 0 15px rgba(199, 9, 9, 1) inset;
+}
+
+.button span {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+/* Ya tienes esta animación definida en el código del logo */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Tamaño original */
+    }
+    50% {
+        transform: scale(1.1); /* Tamaño aumentado */
+    }
+}
+}
+
+.button img {
+    width: 35px;
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(290deg) brightness(150%) contrast(150%);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 2rem 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.info p {
+    font-size: 22px;
+    text-align: center;
+}
+
+.info h3 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+@font-face {
+    font-family: 'Jugabet';
+    src: url('img/fonts/Jugabet-BlackItalic.4f99304c.woff2') format('truetype'); /* Asegúrate de ajustar la ruta */
+    font-weight: normal; /* Cambia según los pesos disponibles */
+    font-style: normal;
+}
+
+/* Popup Styles */
+.popup-container {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  z-index: 10;
+}
+
+.popup {
+  display: none; /* Ocultar popups por defecto */
+  flex-direction: row; /* Asegura disposición en fila */
+  align-items: center; /* Centrado vertical */
+  justify-content: space-between; /* Espacio entre imagen y texto */
+  gap: 15px; /* Espaciado entre imagen y texto */
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.popup.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.popup.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+/* Miniaturas */
+.game-thumbnail {
+  flex-shrink: 0; /* Previene que la imagen cambie de tamaño */
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+}
+
+/* Texto */
+.popup-text {
+  color: #000; /* Letras
+
+.popup.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .popup-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .popup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-thumbnail {
+    width: 40px;
+    height: 40px;
+  }
+}
